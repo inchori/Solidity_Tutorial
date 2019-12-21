@@ -19,7 +19,7 @@ contract ZombieOwnership is ZombieAttack, ERC721 {
   }
 
   function _transfer(address _from, address _to, uint256 _tokenId) private {
-    ownerZombieCount[_to] = ownerZombieCount[_to].add(1); //safemath library
+    ownerZombieCount[_to] = ownerZombieCount[_to].add(1); //safemath library ++ to .add(1)
     ownerZombieCount[msg.sender] = ownerZombieCount[msg.sender].sub(1);
     zombieToOwner[_tokenId] = _to; 
     Transfer(_from, _to, _tokenId);
